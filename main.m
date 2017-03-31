@@ -24,6 +24,8 @@ windspeeds = linspace(MIN_WINDSPEED, MAX_WINDSPEED, DIVISIONS);
 
 Power_avail = (1/2)*windspeeds.^3*AIR_DENSITY*AREA;
 
-advancedRatios = ROTOR_RADIUS * OMEGA / windspeeds;  % advanced ratios (Ω),
+for idx = 1:DIVISIONS
+    advancedRatios(idx) = ROTOR_RADIUS * OMEGA / windspeeds(idx);  % advanced ratios (Ω),
+end 
 
 Re_d = (AIR_DENSITY * 2 * ROTOR_RADIUS * windspeeds)/ AIR_VISCOUSITY;
