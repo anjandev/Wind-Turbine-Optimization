@@ -18,7 +18,7 @@ AIR_VISCOUSITY = 15.11*10^-6; %kg/(m. s) AT At 20 °C
 DIVISIONS = 10000;
 
 
-AREA = pi * (1/2) * ROTOR_RADIUS^2;
+AREA = pi * ROTOR_RADIUS^2;
 
 windspeeds = linspace(MIN_WINDSPEED, MAX_WINDSPEED, DIVISIONS);
 
