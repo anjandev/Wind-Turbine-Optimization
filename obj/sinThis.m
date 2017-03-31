@@ -1,10 +1,19 @@
-function [ y ] = sinThis(x)
-    if  2.4 <= x && x < 3
-        y = sinMaker(0.28, 0.4, -1.1, 0.16, x);
-    elseif 3 <= x  && x < 3.7
-        y = sinMaker(0.17, 1.43, -4.4, 0.2, x);
-    else if  x >=  && x =<
+function [Cp] = CpVsOmega(Omega)
+    % Piece wise function of Cp vs advanced ratios (Ω),
+    if  2.4 <= Omega & Omega < 3.25
+        y = sinMaker(1.725, 0.3925, -2.47, 1.85, Omega);
+    elseif 3.25 <= Omega  & Omega < 3.85
+        y = sinMaker(0.44, 0.77, -1.676, -0.0775, Omega);
+    elseif 3.85 <= Omega & Omega < 4.3
+        y = sinMaker(0.09, 1.7, 0.2, 0.3, Omega);
+    elseif 4.3 <= Omega & Omega < 6
+        y = sinMaker(0.2, 0.4, -1, 0.253, Omega);
+    elseif 6 <= Omega & Omega < 7
+        y = 0.448;        
+    elseif 7 <= Omega & Omega < 8.5
+        y = sinMaker(0.2, 0.4, -1, 0.253, Omega);
+    elseif 8.5 <= Omega & Omega <= 9.55
+        y = sinMaker(0.06, 1.7, 0.2, 0.333, Omega);
     end
-            
 end
 

@@ -14,8 +14,8 @@ DIVISIONS = 10000;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Section 1
-% Section 1 (a) constants
+%% Section 1
+%% Section 1 (a) constants
 ROTOR_RADIUS_1a = 2; % m
 ROTOR_SPEED_HZ_1a = 25; % Hz
 
@@ -39,7 +39,7 @@ Re_d = (AIR_DENSITY * 2 * ROTOR_RADIUS_1a * windspeeds_1a)/ AIR_VISCOUSITY;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Section 1 (b) constants
+%% Section 1 (b) constants
 ROTOR_RADIUS_1b = 2; % m
 WINDSPEED_1b = 12; % m/s
 
@@ -63,7 +63,7 @@ Re_d = (AIR_DENSITY * 2 * ROTOR_RADIUS_1b * WINDSPEED_1b)/ AIR_VISCOUSITY;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Section 1 (c) constants
+%% Section 1 (c) constants
 ROTOR_SPEED_HZ_1c = 25 % Hz
 WINDSPEED_1c = 12; % m/s
 
@@ -89,7 +89,7 @@ Re_d = (AIR_DENSITY * 2 * rotor_radius_1c * WINDSPEED_1c)/ AIR_VISCOUSITY;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Section 2
+%% Section 2
 
 WINDSPEED_2 = 12; % m/s
 
