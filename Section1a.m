@@ -56,27 +56,3 @@ plot(windspeeds_1a, Re_d,'*')
 title(['Re_d Vs Wind Speed'])
 xlabel('Wind Speed (m/s)')
 ylabel('Re_d')
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-%% Section 2
-
-WINDSPEED_2 = 12; % m/s
-
-MIN_ROTOR_RADIUS_2 = 1; % m
-MAX_ROTOR_RADIUS_2 = 8; % m
-
-MIN_ROTOR_SPEED_HZ_2 = 20; % Hz
-MAX_ROTOR_SPEED_HZ_2 = 35; % Hz
-
-rotor_radius_2 = linspace(MIN_ROTOR_RADIUS_2, MAX_ROTOR_RADIUS_2, DIVISIONS);
-rotor_speed_2 = linspace(MIN_ROTOR_SPEED_HZ_2, MAX_ROTOR_SPEED_HZ_2, DIVISIONS);
-
-% need to find rotor diameter and the speed thatr maximizes extracted power
-% This is the end of the code
-
-
