@@ -37,14 +37,21 @@ end
 
 Re_d = (AIR_DENSITY * 2 * rotor_radiuses.* WINDSPEED)/ AIR_VISCOUSITY;
 
+%% Plotting
 subplot(1,3,1);
 plot(rotor_radiuses, Power_avail,'*')
 title(['Power Available Vs Rotor Radiuses'])
 xlabel('Rotor Radiuses (m)')
-ylabel('Power Available (W)') % TODO: CHECK UNITS
+ylabel('Power Available (W)')
 
 subplot(1,3,2);
+plot(rotor_radiuses, Power_ext,'*')
+title(['Power Extracted Vs Rotor Radiuses'])
+xlabel('Rotor Radiuses (m)')
+ylabel('Power Extracted (W)')
+
+subplot(1,3,3);
 plot(rotor_radiuses, Re_d,'*')
 title(['Re_d Vs Rotor Radiuses'])
 xlabel('Rotor Radiuses (m)')
-ylabel('Re_d') % TODO: CHECK UNITS
+ylabel('Re_d') 

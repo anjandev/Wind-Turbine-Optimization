@@ -38,18 +38,16 @@ Re_d = (AIR_DENSITY * 2 * ROTOR_RADIUS * WINDSPEED)/ AIR_VISCOUSITY;
 
 %% Plotting
 subplot(1,3,1);
-% TODO: IS THIS Extracted power or available power. Using extracted power
-% right now
-plot(rotor_speeds_HZ, Power_ext,'*')
-title(['Rotor Speeds Vs Power Extracted'])
-xlabel('Rotor Speeds (Hz)')
-ylabel('Power Extracted (W)') % TODO: CHECK UNITS WATTS?
+plot(rotor_speeds_HZ, Power_avail,'*')
+title(['Power Available Vs Rotor Speeds'])
+xlabel('Rotor Speed (Hz)')
+ylabel('Power Available (W)')
 
 subplot(1,3,2);
-plot(rotor_speeds_HZ, Power_avail,'*')
-title(['Power Vs Rotor Speed'])
-xlabel('Rotor Speed (Hz)')
-ylabel('Power (W)')
+plot(rotor_speeds_HZ, Power_ext,'*')
+title(['Power Extracted Vs Rotor Speeds'])
+xlabel('Rotor Speeds (Hz)')
+ylabel('Power Extracted (W)')
 
 subplot(1,3,3);
 plot(WINDSPEED, Re_d,'*')
