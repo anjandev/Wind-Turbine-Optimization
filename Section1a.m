@@ -4,7 +4,8 @@ clc
 
 addpath './obj'
 
-% Global constants
+%% Global constants
+
 AIR_DENSITY = 1.205; % kg/m3 at 20 °C
 AIR_VISCOUSITY = 15.11*10^-6; %kg/(m. s) AT At 20 °C
 
@@ -28,6 +29,10 @@ AREA_1a = pi * ROTOR_RADIUS_1a^2; %m^2
 windspeeds_1a = linspace(MIN_WINDSPEED_1a, MAX_WINDSPEED_1a, DIVISIONS); % m/s
 
 Power_avail_1a = (1/2)*windspeeds_1a.^3*AIR_DENSITY*AREA_1a; % W
+
+advancedRatios = zeros(1, DIVISIONS);
+CpVsWindSpeed = zeros(1, DIVISIONS);
+Power_ext = zeros(1, DIVISIONS);
 
 for idx = 1:DIVISIONS
     advancedRatios_1a = ROTOR_RADIUS_1a * ROTOR_SPEED_HZ_1a / windspeeds_1a(idx);  % advanced ratios (Ω),
