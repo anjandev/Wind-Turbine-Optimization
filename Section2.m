@@ -20,6 +20,13 @@ MAX_ROTOR_SPEED_HZ = 35; % Hz
 rotor_radiuses = linspace(MIN_ROTOR_RADIUS, MAX_ROTOR_RADIUS, DIVISIONS);
 rotor_speeds = linspace(MIN_ROTOR_SPEED_HZ, MAX_ROTOR_SPEED_HZ, DIVISIONS);
 
+%points from Cp graph
+CpData = [2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5;
+     .025, .19, .30, .37, .4, .425, .437, .45, .45, .445, .435, .42, .385, .35, .28];
+
+%%curve fit polynomial to data above^
+coefs = polyfit(CpData(1,:), CpData(2,:), 7);
+
 n = 1;
 
 CpMax = 0;
@@ -31,8 +38,8 @@ for rotorRadiusIdx = 1:DIVISIONS
     for rotorSpeedIdx = 1:DIVISIONS
         advancedRatio = rotor_radiuses(rotorRadiusIdx) * rotor_speeds(rotorSpeedIdx) / WINDSPEED;
         if advancedRatio >= MIN_DOMAIN_OMEGA && advancedRatio <= MAX_DOMAIN_OMEGA
-            if CpVsOmega(advancedRatio) > CpMax
-                CpMax = CpVsOmega(advancedRatio);
+            if polyval(coefs, advancedRatio) > CpMax
+                CpMax = polyval(coefs, advancedRatio);
                 rotorRWithMaxCp = rotor_radiuses(rotorRadiusIdx);
                 rotorSpeedWithMaxCp = rotor_speeds(rotorSpeedIdx);
                 advancedRatioWithMaxCp = advancedRatio;
