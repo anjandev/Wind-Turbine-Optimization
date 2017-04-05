@@ -4,7 +4,7 @@ clc
 
 addpath './obj'
 
-DIVISIONS = 10000;
+DIVISIONS = 1000;
 
 MAX_DOMAIN_OMEGA = 9.55;
 MIN_DOMAIN_OMEGA = 2;
@@ -25,7 +25,7 @@ CpData = [2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 
      .025, .19, .30, .37, .4, .425, .437, .45, .45, .445, .435, .42, .385, .35, .28];
 
 %%curve fit polynomial to data above^
-coefs = polyfit(CpData(1,:), CpData(2,:), 7);
+coefs = polyfit(CpData(1,:), CpData(2,:), 6);
 
 n = 1;
 
@@ -37,8 +37,9 @@ advancedRatioWithMaxCp = 0;
 for rotorRadiusIdx = 1:DIVISIONS
     for rotorSpeedIdx = 1:DIVISIONS
         advancedRatio = rotor_radiuses(rotorRadiusIdx) * rotor_speeds(rotorSpeedIdx) / WINDSPEED;
+        cpCurrent = polyval(coefs, advancedRatio);
         if advancedRatio >= MIN_DOMAIN_OMEGA && advancedRatio <= MAX_DOMAIN_OMEGA
-            if polyval(coefs, advancedRatio) > CpMax
+            if cpCurrent > CpMax
                 CpMax = polyval(coefs, advancedRatio);
                 rotorRWithMaxCp = rotor_radiuses(rotorRadiusIdx);
                 rotorSpeedWithMaxCp = rotor_speeds(rotorSpeedIdx);
