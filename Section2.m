@@ -51,8 +51,8 @@ for rotorRadiusIdx = 1:DIVISIONS
 
 rotorDiameter = rotorRWithMaxCp*2;
  
-X = ['Rotor diameter that maximizes the extracted power is ',num2str(rotorDiameter),'m.'];
-Y = ['Rotor speed that maximizes the extracted power is ',num2str(rotorSpeedWithMaxCp),'Hz.'];
+X = ['Rotor diameter that maximizes the extracted power is ',num2str(rotorDiameter),' m.'];
+Y = ['Rotor speed that maximizes the extracted power is ',num2str(rotorSpeedWithMaxCp),' Hz.'];
 Z = ['The advanced ratio that maximizes extracted power is ',num2str(advancedRatioWithMaxCp)];
 
 disp(X);
