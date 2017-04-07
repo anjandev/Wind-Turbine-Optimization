@@ -7,7 +7,7 @@ addpath './obj'
 DIVISIONS = 10000;
 
 MAX_DOMAIN_OMEGA = 9.55;
-MIN_DOMAIN_OMEGA = 2;
+MIN_DOMAIN_OMEGA = 2.6;
 
 WINDSPEED = 12; % m/s
 
@@ -42,7 +42,7 @@ for rotorRadiusIdx = 1:DIVISIONS
  end
 
 rotorDiameter = rotorRWithMaxCp*2;
- 
+
 X = ['Rotor diameter that maximizes the extracted power is ',num2str(rotorDiameter),' m.'];
 Y = ['Rotor speed that maximizes the extracted power is ',num2str(rotorSpeedWithMaxCp),' Hz.'];
 Z = ['The advanced ratio that maximizes extracted power is ',num2str(advancedRatioWithMaxCp)];
