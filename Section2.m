@@ -4,7 +4,7 @@ clc
 
 addpath './obj'
 
-DIVISIONS = 10000;
+DIVISIONS = 11700;
 
 MAX_DOMAIN_OMEGA = 9.55;
 MIN_DOMAIN_OMEGA = 2.6;
